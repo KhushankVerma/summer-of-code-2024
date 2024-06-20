@@ -1,0 +1,124 @@
+* {
+  font-family: "Lato", "Open Sans";
+  border: border-box;
+}
+
+div {
+  display: inline-block;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #24243e, #302b63, #0f0c29);
+}
+
+.wholepage {
+  width: 100%;
+  height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginbox {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2.5px);
+
+  width: 200px;
+  height: 300px;
+  padding: 20px 5% 5% 5%;
+
+  border: 2.5px solid white;
+  border-radius: 7%;
+  color: white;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+label {
+  font-size: 10px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 25px;
+  box-sizing: border-box;
+  margin-top: 2px;
+  margin-bottom: 3px;
+  border: 1px solid #bcbec0;
+  border-radius: 9px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+input::placeholder {
+  font-size: 10px;
+  font-weight: 400;
+  color: #bcbec0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 7px;
+  font-weight: 300;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 25px;
+  border-radius: 9px;
+  color: white;
+  background-color: #bd0c47;
+  border: 0;
+  margin-top: 10px;
+}
+
+.other-options {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+h3 {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+button + h3 {
+  width: 100%;
+  margin-top: 20px;
+}
+.altbutton {
+  width: 28%;
+  height: 40px;
+  border: 0;
+  border-radius: 20px;
+}
+img {
+  height: 20px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 300;
+}
+h3 a {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+#group1 {
+  position: fixed;
+  top: 100px;
+  left: 600px;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+}
