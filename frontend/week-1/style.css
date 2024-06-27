@@ -1,6 +1,46 @@
 * {
-  font-family: "Lato", "Open Sans";
-  border: border-box;
+  font-family: "Poppins", "Open Sans";
+  margin: 0px;
+  padding: 0px;
+}
+
+.hlogo {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  height: 400px;
+  align-self: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.logoimg {
+  align-self: flex-start;
+  height: 7vh;
+  margin-right: 1rem;
+}
+
+.logocontainer {
+  align-self: center;
+  font-size: 7vh;
+  font-family: "Bebas Neue";
+  font-weight: 900;
+  color: #235b58;
+  margin: 10px;
+}
+
+.text-welcome {
+  font-size: 1.5vh;
+  padding-left: 10px;
+}
+
+.text-login {
+  padding-left: 10px;
+  font-size: 5vh;
+  font-weight: 600;
 }
 
 div {
@@ -8,75 +48,136 @@ div {
 }
 
 body {
-  background-image: linear-gradient(to bottom right, #24243e, #302b63, #0f0c29);
+  background-image: linear-gradient(to bottom right, #292f36, #1f6f6a);
 }
 
-.wholepage {
-  width: 100%;
-  height: 96vh;
+body,
+html {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .loginbox {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2.5px);
-
-  width: 200px;
-  height: 300px;
-  padding: 20px 5% 5% 5%;
-
-  border: 2.5px solid white;
-  border-radius: 7%;
-  color: white;
+  background-color: white;
+  width: 640px;
+  height: 395px;
+  padding: 25px;
+  /* box-shadow: 0px 0px 100px 40px #bbd6bb; */
+  border: none;
+  border-radius: 60px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  color: #292f36;
+  display: flex;
 }
 
+.inputarea {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 2px solid #e7f6e7;
+  background-image: linear-gradient(to bottom left, #edf5ed, white);
+  border-radius: 40px;
+  border-top-left-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-image {
+  width: 50%;
+}
 h1 {
-  font-size: 25px;
+  font-size: 5.5rem;
 }
 
-label {
-  font-size: 10px;
-  font-weight: 300;
-  margin-bottom: 10px;
+form {
+  align-self: flex-start;
+  width: 100%;
+  margin: 0;
+}
+
+.userdatabox {
+  margin: 25px;
+  width: 100% - margin;
+  display: flex;
+  height: 105px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.indi-input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 4px 4px #edf5ed;
+  color: #3f48537a;
+}
+
+.logo {
+  width: 36px;
+  display: flex;
+  font-size: 1.9vh;
+  justify-content: center;
 }
 
 input[type="email"],
 input[type="password"] {
-  width: 100%;
-  height: 25px;
+  height: 30px;
+  flex-grow: 1;
   box-sizing: border-box;
-  margin-top: 2px;
-  margin-bottom: 3px;
-  border: 1px solid #bcbec0;
-  border-radius: 9px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  padding: 10px;
+  border: none;
+  font-size: 1.9vh;
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
 }
 
 input::placeholder {
-  font-size: 10px;
+  font-size: 1.9vh;
   font-weight: 400;
-  color: #bcbec0;
   padding: 0;
 }
-a {
+.b a {
+  margin-left: 5px;
   text-decoration: none;
-  color: white;
-  font-size: 7px;
-  font-weight: 300;
+  color: #3f48537a;
+  font-size: 1.7vh;
+  font-weight: 500;
 }
-
+form {
+  display: flex;
+  flex-direction: column;
+}
 input[type="submit"] {
-  width: 100%;
-  height: 25px;
-  border-radius: 9px;
+  height: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 20px;
   color: white;
-  background-color: #bd0c47;
+  font-size: 1.7vh;
+  font-weight: 600;
+  background-color: #4ecdc4;
   border: 0;
   margin-top: 10px;
+  margin-bottom: 10px;
+  align-self: center;
+  box-shadow: 0px 0px 20px 10px #f6faf6;
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0px 0px 10px 5px #4ecdc524;
 }
 
 .other-options {
@@ -105,13 +206,20 @@ img {
 }
 
 h3 {
+  margin: 10px;
   text-align: center;
-  font-size: 10px;
-  font-weight: 300;
+  font-size: 1.5vh;
+  font-weight: 400;
 }
+
 h3 a {
-  font-size: 10px;
-  font-weight: 700;
+  text-decoration: none;
+  color: #ff4747;
+  font-weight: 500;
+}
+
+h3 a:hover {
+  text-shadow: 0px 0px 10px #ff4747ba;
 }
 
 #group1 {

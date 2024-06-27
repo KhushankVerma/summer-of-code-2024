@@ -4,57 +4,48 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Login</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/899102f73a.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="wholepage">
       <div class="loginbox">
-        <h1>Login</h1>
-        <form action="">
-          <label for="">Email</label>
-          <input
-            type="email"
-            name="useremail"
-            id="useremail"
-            placeholder="username@gmail.com"
-          />
-          <label for="">Password</label>
-          <br />
-          <input
-            type="password"
-            name="password"
-            id="user-password"
-            placeholder="Password"
-          />
-          <a href="">Forgot password?</a>
-          <br />
-          <input type="submit" value="Sign in" />
-        </form>
-        <div class="other-options">
-          <h3>or continue with</h3>
-          <br />
-          <br />
-          <button id="google-login" class="altbutton">
-            <img src="google-icon.png" alt="GOOGLE" />
-          </button>
-          <button id="github-login" class="altbutton">
-            <img src="github-mark.png" alt="GIT" />
-          </button>
-          <button id="facebook-login" class="altbutton">
-            <img src="Facebook_Logo_Primary.png" alt="FACEBOOK" />
-          </button>
-          <h3>Don't have an account yet? <a href="">Register for free</a></h3>
+        <div class="left-image">image</div>
+        <div class="inputarea">
+            <div class="hlogo"><div class="logocontainer"><img src="images/logo-green.png" class="logoimg" >GLIDE<span style="color:#ff4747; font-family: 'Bebas Neue';">POS</span></div>
+            
+            <div class="text-welcome">welcome back !!!</div>
+            <div class="text-login">Log In</div>
+        </div>
+          <form action="">
+            <div class="userdatabox">
+              <div class="indi-input">
+                <div class="logo">
+                  <i class="fa-solid fa-user">
+                  </i>
+                </div>
+                  <input type="email" placeholder="Email">
+              </div>
+              <div class="indi-input">
+                <div class="logo">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+                <input type="password" placeholder="Password">
+              </div>
+              <div class="b">
+
+                <a href="">Forgot password?</a>
+              </div>
+            </div>
+            <input type="submit" value="LOGIN ->" />
+          </form>
+            <h3>Don't have an account yet? <a href="">Register for free</a></h3>
+          </div>
         </div>
       </div>
-    </div>
-    <img src="vector groups/Group1.png" id="group1" alt="" />
-  </body>
+    </body>
 </html>
