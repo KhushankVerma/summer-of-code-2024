@@ -1,13 +1,18 @@
-from flask import Blueprint, render_template
-from ..models import InventoryItem, Customer
+from flask import Blueprint
 
-bp = Blueprint('routes', __name__)
+# Import blueprints from each module
+from app.routes.products import products_bp
+from app.routes.customers import customers_bp
+from app.routes.staff import staff_bp
+from app.routes.auth import auth_bp
 
-@bp.route('/')
-def index():
-    # Fetch data from the database
-    items = InventoryItem.query.all()
-    customers = Customer.query.all()
 
-    # Render a template with the data
-    return render_template('index.html', items=items, customers=customers)
+# Create a blueprint for the main application
+main_bp = Blueprint('main', __name__)
+
+# Register the imported blueprints with the main blueprint
+def register_blueprints(app):
+    app.register_blueprint(products_bp)
+    app.register_blueprint(customers_bp)
+    app.register_blueprint(staff_bp)
+    app.register_blueprint(auth_bp)

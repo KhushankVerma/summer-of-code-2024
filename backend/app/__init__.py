@@ -1,8 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from app.routes import bp as routes_bp  # Import the blueprint
-from .database import db
+from .database import db, bcrypt, login_manager
+from .models import Staff
+from app.routes import register_blueprints
+
+
 migrate = Migrate()
 
 def create_app():
@@ -11,7 +14,13 @@ def create_app():
     
     db.init_app(app)
     migrate.init_app(app, db)  # Initialize Flask-Migrate
-    
-    app.register_blueprint(routes_bp)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+# Register the blueprints
+    register_blueprints(app)
     
     return app
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Staff.query.get(int(user_id))
