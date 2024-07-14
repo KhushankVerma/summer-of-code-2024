@@ -4,8 +4,6 @@ from flask_migrate import Migrate
 from .database import db, bcrypt, login_manager
 from .models import Staff
 from app.routes import register_blueprints
-
-
 migrate = Migrate()
 
 def create_app():
