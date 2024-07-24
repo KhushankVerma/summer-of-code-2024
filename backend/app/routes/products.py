@@ -4,14 +4,14 @@ from ..database import db
 products_bp = Blueprint('products', __name__, url_prefix='/products')
 from flask_login import login_required 
 
-@login_required  # Ensure the user is logged in before they can log out
 @products_bp.route('/', methods=['GET'])
+@login_required  # Ensure the user is logged in before they can log out
 def get_inventory_items():
     items = InventoryItem.query.all()
     return jsonify([item.to_dict() for item in items])
 
+@products_bp.route('/<string:item_sku>', methods=['GET'])
 @login_required  # Ensure the user is logged in before they can log out
-@products_bp.route('/<int:item_sku>', methods=['GET'])
 def get_inventory_item(item_sku):
     item = InventoryItem.query.get(item_sku)
     if item:
@@ -19,8 +19,8 @@ def get_inventory_item(item_sku):
     else:
         return jsonify({'error': 'Item not found'}), 404
 
-@login_required  # Ensure the user is logged in before they can log out
 @products_bp.route('/', methods=['POST'])
+@login_required  # Ensure the user is logged in before they can log out
 def create_inventory_item():
     data = request.get_json()
     item_name = data.get('name')
@@ -49,8 +49,8 @@ def create_inventory_item():
     db.session.commit()
     return jsonify(new_item.to_dict()), 201
 
+@products_bp.route('/<string:item_sku>', methods=['PUT'])
 @login_required  # Ensure the user is logged in before they can log out
-@products_bp.route('/<int:item_sku>', methods=['PUT'])
 def update_inventory_item(item_sku):
     item = InventoryItem.query.get(item_sku)
     if item:
@@ -62,8 +62,8 @@ def update_inventory_item(item_sku):
     else:
         return jsonify({'error': 'Item not found'}), 404
 
+@products_bp.route('/<string:item_sku>', methods=['DELETE'])
 @login_required  # Ensure the user is logged in before they can log out
-@products_bp.route('/<int:item_sku>', methods=['DELETE'])
 def delete_inventory_item(item_sku):
     item = InventoryItem.query.get(item_sku)
     if item:
