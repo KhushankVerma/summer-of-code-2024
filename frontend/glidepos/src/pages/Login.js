@@ -11,18 +11,22 @@ function Login() {
   const loginUser = async () => {
     console.log(email, password);
     try {
-      const resp = await httpClient.post("http://127.0.0.1:5000/auth/login", {
-        email: email,
-        password: password,
-      });
+      const resp = await httpClient.post(
+        "https://glidepos-api.vercel.app/auth/login",
+        {
+          email: email,
+          password: password,
+        }
+      );
       console.log(resp.data);
 
       if (resp.status === 200) {
         window.location.href = "/home";
-      } else {
-        alert("Invalid email or password");
       }
     } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      }
       console.log(error);
     }
   };
