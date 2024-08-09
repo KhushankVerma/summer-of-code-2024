@@ -5,11 +5,13 @@ from .database import db, bcrypt, login_manager
 from .models import Staff
 from app.routes import register_blueprints
 migrate = Migrate()
+from flask_cors import CORS
+
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object('app.config.Config')
-    
+    cors = CORS(app, supports_credentials=True)
     db.init_app(app)
     migrate.init_app(app, db)  # Initialize Flask-Migrate
     bcrypt.init_app(app)

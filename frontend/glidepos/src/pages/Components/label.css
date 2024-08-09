@@ -1,0 +1,19 @@
+input:focus + label .text,
+:not(input[value=""]) + label .text,
+textarea:focus + label .text {
+  background-color: white;
+  padding: 0 5px;
+  transform: translate(0, -130%);
+  font-size: small;
+}
+
+input + label .text,
+textarea + label .text {
+  padding: 0 5px;
+}
+
+.text {
+  transform: translate(0);
+  transition: transform 0.15s ease-out, font-size 0.15s ease-out,
+    background-color 0.2s ease-out, color 0.15s ease-out;
+}

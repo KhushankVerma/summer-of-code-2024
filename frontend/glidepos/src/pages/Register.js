@@ -8,7 +8,7 @@ function Register() {
         <div className="registerimage">image</div>
         <div className="registerinnerbox">
           <div className="registerstart">
-            <div className="registerlogo">
+            <div className="registerlogo flex">
               <img src="logo-green.png" className="registerlogoimg" />
               GLIDE
               <span style={{ color: "#ff4747", fontFamily: "Bebas Neue" }}>
