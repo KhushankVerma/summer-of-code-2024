@@ -46,23 +46,6 @@ function Customer() {
               <input
                 className=" flex-grow h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] outline-none border border-solid border-[#878787] rounded-[10px]"
                 type="text"
-                id="name"
-                value={value1}
-                onChange={(e) => {
-                  setValue1(e.target.value);
-                }}
-              />
-              <label
-                htmlFor="name"
-                className=" absolute h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] border border-solid border-transparent"
-              >
-                <div className="text">Name*</div>
-              </label>
-            </div>
-            <div className="my-[10px] flex items-center">
-              <input
-                className=" flex-grow h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] outline-none border border-solid border-[#878787] rounded-[10px]"
-                type="text"
                 id="mobile"
                 value={value2}
                 onChange={(e) => {
@@ -74,6 +57,23 @@ function Customer() {
                 className=" absolute h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] border border-solid border-transparent"
               >
                 <div className="text">Phone no.*</div>
+              </label>
+            </div>
+            <div className="my-[10px] flex items-center">
+              <input
+                className=" flex-grow h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] outline-none border border-solid border-[#878787] rounded-[10px]"
+                type="text"
+                id="name"
+                value={value1}
+                onChange={(e) => {
+                  setValue1(e.target.value);
+                }}
+              />
+              <label
+                htmlFor="name"
+                className=" absolute h-[50px] text-[16px] m-[2px] px-[14px] py-[12px] border border-solid border-transparent"
+              >
+                <div className="text">Name*</div>
               </label>
             </div>
             <div className="my-[10px] flex">

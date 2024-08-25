@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import "./Login.css";
 import httpClient from "../httpClient";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   // const [Email, setEmail] = useState("");
   // const [Password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const loginUser = async () => {
     console.log(email, password);
     try {
-      const resp = await httpClient.post(
-        "https://glidepos-api.vercel.app/auth/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
-      console.log(resp.data);
+      const resp = await httpClient.post("http://127.0.0.1:5000/auth/login", {
+        email: email,
+        password: password,
+      });
+      console.log(resp.headers.get("Set-Cookie"));
 
       if (resp.status === 200) {
-        window.location.href = "/home";
+        console.log("Login successful:-)");
+        // console.log(resp.data);
+        navigate("/home");
       }
     } catch (error) {
       if (error.response) {

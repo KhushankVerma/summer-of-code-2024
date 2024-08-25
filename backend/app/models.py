@@ -47,7 +47,7 @@ class Staff(UserMixin, db.Model):
     
     def to_dict(self):
         # Return a dictionary with all columns and their values
-        return {column.name: getattr(self, column.name) for column in self.__table__.columns}
+        return {"s_ID": getattr(self, "s_ID"), "s_name": getattr(self, "s_name"), "s_email": getattr(self, "s_email"), "s_contact": getattr(self, "s_contact"), "s_isAdmin": getattr(self, "s_isAdmin")}
     
     def set_password(self, password):
         self.s_password = bcrypt.generate_password_hash(password).decode('utf-8')
