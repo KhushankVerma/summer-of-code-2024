@@ -18,7 +18,7 @@ function Itembar() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
-    <div className="w-[25%] border-r-2 border-[#c2e1df] flex flex-col">
+    <div className="w-[25%] h-[91%] scrollbar-thin overflow-y-scroll border-r-2 border-[#c2e1df] flex flex-col">
       <div className="flex items-end h-[50px]">
         <div className="flex items-center mt-[20px] text-[#878787]">
           <svg
@@ -47,18 +47,23 @@ function Itembar() {
         {categories.map((category) => (
           <div className="flex items-center justify-center h-[50px] text-black">
             {selectedCategory === category ? (
-              <div className="h-[40px] w-[80%] m-[5px] bg-[#d0d0d0] rounded-[5px] flex items-center">
+              <div
+                style={{ cursor: "pointer" }}
+                className="h-[40px] w-[80%] m-[5px] bg-[#d0d0d0] rounded-[5px] flex items-center category"
+              >
                 <div className="m-[5px] ml-[10px]">{category}</div>
               </div>
             ) : (
               <div
-                className="h-[40px] m-[5px] w-[80%] flex items-center"
+                style={{ cursor: "pointer" }}
+                className="h-[40px] m-[5px] w-[80%] flex items-center category rounded-[5px]"
                 onClick={(e) => {
                   setSelectedCategory(e.target.id);
                   console.log(e.target["id"]);
                 }}
+                id={category}
               >
-                <div className="m-[5px] ml-[10px]" id={category}>
+                <div className="m-[5px] ml-[10px] category" id={category}>
                   {category}
                 </div>
               </div>

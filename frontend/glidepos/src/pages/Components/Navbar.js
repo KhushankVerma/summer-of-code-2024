@@ -3,9 +3,7 @@ import httpClient from "../../httpClient";
 function Navbar({ Items }) {
   const logoutUser = async () => {
     try {
-      const resp = await httpClient.get(
-        "https://glidepos-api.vercel.app/auth/logout"
-      );
+      const resp = await httpClient.get("http://127.0.0.1:5000/auth/logout");
       console.log(resp.data);
       if (resp.status === 200) {
         window.location.href = "/login";
